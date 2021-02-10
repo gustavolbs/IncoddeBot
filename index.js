@@ -13,6 +13,10 @@ http
   })
   .listen(4000);
 
+client.on("ready", () => {
+  console.log("The bot is ready");
+});
+
 client.on("message", function (message) {
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
